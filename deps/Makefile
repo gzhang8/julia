@@ -42,9 +42,9 @@ DEP_LIBS :=
 # Always use libblastrampoline
 DEP_LIBS += blastrampoline
 
-ifeq ($(USE_SYSTEM_CSL), 0)
+# We always list `csl` as one of our dep libs, we handle the USE_SYSTEM_*
+# logic internall in `csl.mk`
 DEP_LIBS += csl
-endif
 
 ifeq ($(USE_GPL_LIBS), 1)
 DEP_LIBS += suitesparse-wrapper
